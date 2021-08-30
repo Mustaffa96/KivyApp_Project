@@ -1,0 +1,1273 @@
+Calc:
+
+<Calc>:
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'top'
+        ScreenManager:
+            size_hint: 1, .9
+            id: _screen_manager
+            Screen:
+                name: 'screen0'
+                MenuWidget:
+                    canvas:
+                        Rectangle:
+                            size: self.size
+                            source: 'images/zakat.jpeg'
+                    Label:
+                        font_size: dp(60)
+                        font_name: 'fonts/Denne2006.ttf'
+                        text: "ZakatCalc."
+                        pos_hint: { "center_x": .5, "center_y": .6}
+                    Button:
+                        font_size: dp(30)
+                        font_name: 'fonts/Denne2006.ttf'
+                        text: "MULA"
+                        pos_hint: { "center_x": .5, "center_y": .3}
+                        size_hint: .2, .15
+                        on_press: _screen_manager.current = 'screen1'
+                        background_normal: ''
+                        background_color: 1, .3, .4, .85
+            Screen:
+                name: 'screen1'
+                ScrollView:
+                BoxLayoutExample:
+                    orientation: "vertical"
+                    Label:
+                        text: "Pilih negeri yang ingin dikira"
+                    Button:
+                        text: "Johor"
+                        on_press: _screen_manager.current = 'screen2'
+                    Button:
+                        text: "Kedah"
+                        on_press: _screen_manager.current = 'screen3'
+                    Button:
+                        text: "Kelantan"
+                        on_press: _screen_manager.current = 'screen4'
+                    Button:
+                        text: "Melaka"
+                        on_press: _screen_manager.current = 'screen5'
+                    Button:
+                        text: "Negeri Sembilan"
+                        on_press: _screen_manager.current = 'screen6'
+                    Button:
+                        text: "Pahang"
+                        on_press: _screen_manager.current = 'screen7'
+                    Button:
+                        text: "Perak"
+                        on_press: _screen_manager.current = 'screen8'
+                    Button:
+                        text: "Perlis"
+                        on_press: _screen_manager.current = 'screen9'
+                    Button:
+                        text: "Pulau Pinang"
+                        on_press: _screen_manager.current = 'screen10'
+                    Button:
+                        text: "Sabah"
+                        on_press: _screen_manager.current = 'screen11'
+                    Button:
+                        text: "Sarawak"
+                        on_press: _screen_manager.current = 'screen12'
+                    Button:
+                        text: "Selangor"
+                        on_press: _screen_manager.current = 'screen13'
+                    Button:
+                        text: "Terengganu"
+                        on_press: _screen_manager.current = 'screen14'
+                    Button:
+                        text: "WP Kuala Lumpur"
+                        on_press: _screen_manager.current = 'screen15'
+                    Button:
+                        text: "WP Labuan"
+                        on_press: _screen_manager.current = 'screen16'
+                    Button:
+                        text: "WP Putrajaya"
+                        on_press: _screen_manager.current = 'screen17'
+                    Button:
+                        text: "<- Kembali ke Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen2'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Johor"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_b
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_c
+                        text: "10.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_d
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result1.text = str(float(input_a.text) * float(input_d.text))
+                        on_press: _result2.text = str(float(input_b.text) * float(input_d.text))
+                        on_press: _result3.text = str(float(input_c.text) * float(input_d.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result1
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result2
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result3
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen3'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Kedah"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_e
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_f
+                        text: "14.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_g
+                        text: "21.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_h
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result4.text = str(float(input_e.text) * float(input_h.text))
+                        on_press: _result5.text = str(float(input_f.text) * float(input_h.text))
+                        on_press: _result6.text = str(float(input_g.text) * float(input_h.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result4
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result5
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result6
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen4'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Kelantan"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_i
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_j
+                        text: "14.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_k
+                        text: "21.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_l
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result7.text = str(float(input_i.text) * float(input_l.text))
+                        on_press: _result8.text = str(float(input_j.text) * float(input_l.text))
+                        on_press: _result9.text = str(float(input_k.text) * float(input_l.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result7
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result8
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result9
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen5'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Melaka"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_m
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_n
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_o
+                        text: "14.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_p
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result10.text = str(float(input_m.text) * float(input_p.text))
+                        on_press: _result11.text = str(float(input_n.text) * float(input_p.text))
+                        on_press: _result12.text = str(float(input_o.text) * float(input_p.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result10
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result11
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result12
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen6'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Negeri Sembilan"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_q
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_r
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_s
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_t
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result13.text = str(float(input_q.text) * float(input_t.text))
+                        on_press: _result14.text = str(float(input_r.text) * float(input_t.text))
+                        on_press: _result15.text = str(float(input_s.text) * float(input_t.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result13
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result14
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result15
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen7'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Pahang"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_u
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_v
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_w
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_x
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result16.text = str(float(input_u.text) * float(input_x.text))
+                        on_press: _result17.text = str(float(input_v.text) * float(input_y.text))
+                        on_press: _result18.text = str(float(input_w.text) * float(input_z.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result16
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result17
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result18
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen8'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Perak"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_y
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_z
+                        text: "14.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a1
+                        text: "21.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a2
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result19.text = str(float(input_y.text) * float(input_a2.text))
+                        on_press: _result20.text = str(float(input_z.text) * float(input_a2.text))
+                        on_press: _result21.text = str(float(input_a1.text) * float(input_a2.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result19
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result20
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result21
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen9'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Perlis"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a3
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a4
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a5
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a6
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result22.text = str(float(input_a3.text) * float(input_a6.text))
+                        on_press: _result23.text = str(float(input_a4.text) * float(input_a6.text))
+                        on_press: _result24.text = str(float(input_a5.text) * float(input_a6.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result22
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result23
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result24
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen10'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "P Pinang"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a7
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a8
+                        text: "12.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a9
+                        text: "16.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a10
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result25.text = str(float(input_a7.text) * float(input_a10.text))
+                        on_press: _result26.text = str(float(input_a8.text) * float(input_a10.text))
+                        on_press: _result27.text = str(float(input_a9.text) * float(input_a10.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result25
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result26
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result27
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen11'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Sabah"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a11
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a12
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a13
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a14
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result28.text = str(float(input_a11.text) * float(input_a14.text))
+                        on_press: _result29.text = str(float(input_a12.text) * float(input_a14.text))
+                        on_press: _result30.text = str(float(input_a13.text) * float(input_a14.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result28
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result29
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result30
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen12'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Sarawak"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a15
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a16
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a17
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a18
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result31.text = str(float(input_a15.text) * float(input_a18.text))
+                        on_press: _result32.text = str(float(input_a16.text) * float(input_a18.text))
+                        on_press: _result33.text = str(float(input_a17.text) * float(input_a18.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result31
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result32
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result33
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen13'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Selangor"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a19
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a20
+                        text: "14.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a21
+                        text: "21.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a22
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result34.text = str(float(input_a19.text) * float(input_a22.text))
+                        on_press: _result35.text = str(float(input_a20.text) * float(input_a22.text))
+                        on_press: _result36.text = str(float(input_a21.text) * float(input_a22.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result34
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result35
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result36
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen14'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "Terengganu"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a23
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a24
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a25
+                        text: "21.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a26
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result37.text = str(float(input_a23.text) * float(input_a26.text))
+                        on_press: _result38.text = str(float(input_a24.text) * float(input_a26.text))
+                        on_press: _result39.text = str(float(input_a25.text) * float(input_a26.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result37
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result38
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result39
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen15'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "WP Kuala Lumpur"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a27
+                        text: "5.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a28
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a29
+                        text: "14.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a30
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result40.text = str(float(input_a27.text) * float(input_a30.text))
+                        on_press: _result41.text = str(float(input_a28.text) * float(input_a30.text))
+                        on_press: _result42.text = str(float(input_a29.text) * float(input_a30.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result40
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result41
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result42
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen16'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "WP Labuan"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a31
+                        text: "5.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a32
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a33
+                        text: "14.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a34
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result43.text = str(float(input_a31.text) * float(input_a34.text))
+                        on_press: _result44.text = str(float(input_a32.text) * float(input_a34.text))
+                        on_press: _result45.text = str(float(input_a33.text) * float(input_a34.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result43
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result44
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result45
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+            Screen:
+                name: 'screen17'
+                GridLayoutExample:
+                    cols:2
+                    Label:
+                        text: "Negeri yang anda pilih: "
+                        size_hint: .5, .5
+                    Label:
+                        text: "WP Putrajaya"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a35
+                        text: "5.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a36
+                        text: "7.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a37
+                        text: "14.00"
+                        size_hint: .5, .5
+                    Label:
+                        text: "Bil. Tanggungan(Orang)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: input_a38
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Tekan ->"
+                        size_hint: .5, .5
+                    Button:
+                        text: "JUMLAH"
+                        on_press: _result46.text = str(float(input_a35.text) * float(input_a38.text))
+                        on_press: _result47.text = str(float(input_a36.text) * float(input_a38.text))
+                        on_press: _result48.text = str(float(input_a37.text) * float(input_a38.text))
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Tempatan (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result46
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Import (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result47
+                        text: ""
+                        size_hint: .5, .5
+                    Label:
+                        text: "Beras Basmathi (RM)"
+                        size_hint: .5, .5
+                    TextInput:
+                        id: _result48
+                        text: ""
+                        size_hint: .5, .5
+                    Button:
+                        text: "<- Kembali"
+                        on_press: _screen_manager.current = 'screen1'
+                    Button:
+                        text: "Menu Utama"
+                        on_press: _screen_manager.current = 'screen0'
+
